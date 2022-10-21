@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.ViewModels
+
+@model RegisterViewModel
+
+<h2>Register a new user</h2>
+<hr />
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+  @Html.LabelFor(user => user.Email)
+  @Html.TextBoxFor(user=> user.Email)
+
+  <p>Password must be at least 6 characters long and contain at least 1 number, 1 uppercase letter, and 1 lowercase letter</p>
+
+  @Html.LabelFor(user=> user.Password)
+  @Html.PasswordFor(user=> user.Password)
+
+  @Html.LabelFor(user=> user.ConfirmPassword)
+  @Html.PasswordFor(user=> user.ConfirmPassword)
+
+  <input type="submit" value="Register" />
+}
