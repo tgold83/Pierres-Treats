@@ -35,11 +35,11 @@ namespace PierresTreats
 
       services.Configure<IdentityOptions>(options =>
       {
-        options.Password.RequireDigit = false;
-        options.Password.RequiredLength = 0;
-        options.Password.RequireLowercase = false;
+        options.Password.RequireDigit = true;
+        options.Password.RequiredLength = 6;
+        options.Password.RequireLowercase = true;
         options.Password.RequireNonAlphanumeric = false;
-        options.Password.RequireUppercase = false;
+        options.Password.RequireUppercase = true;
         options.Password.RequiredUniqueChars = 0;
       });
     }
